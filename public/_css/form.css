@@ -1,0 +1,51 @@
+.form-div{
+    background-color: rgba(0,0,0, .7);
+    color: rgb(255,255,255);
+    width:70%;
+    margin: 40px auto;
+    padding: 20px;
+}
+#form .form-control,
+#form input{
+  min-height: 50px;
+}
+
+#form .form-control{
+  max-width: 20%;
+}
+
+#form .form-control,
+#form label{
+  display: inline-block;
+  font-size: 20px;
+  text-align: right;
+}
+
+#form label{
+  width: 240px;
+}
+
+#form select{
+  margin: 0 30px 0 5px;
+  margin-left: 30px;
+}
+
+#form button{
+  margin-left: 70px;
+}
+
+#form input{
+  width: 40%;
+  border-radius: 8px;
+  margin-left: 30px;
+  color: rgb(0,0,0);
+}
+
+#form div{
+  margin: 40px;
+}
+
+.form-div > h1{
+  font-size: 48px;
+  text-align: center;
+}

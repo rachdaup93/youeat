@@ -1,0 +1,41 @@
+<div class="form-div">
+  <h1> Log In </h1>
+
+  <% if (errorMessage.length > 0) { %>
+    <p class="error-message"> <%= errorMessage %> </p>
+  <% } %>
+
+  <% if (logoutFeedback.length > 0) { %>
+    <p class="success-message"> <%= logoutFeedback %> </p>
+  <% } %>
+
+  <form id="form" method="post" action="/process-login">
+
+    <% if (flashError.length > 0) { %>
+      <p class="error-message"> <%= flashError %> </p>
+    <% } %>
+    
+    <div>
+      <label for="email-input"> Email </label>
+      <input  id="email-input" name="email" type="email" placeholder="">
+    </div>
+
+    <div>
+      <label for="password-input"> Password </label>
+      <input  id="password-input" name="password" type="password"  placeholder="*****">
+    </div>
+
+    <button class="button-brown"> Log In </button>
+
+  </form>
+
+  <a href="/auth/facebook">
+    Log In with Facebook
+  </a>
+  <br>
+
+  <a href="/auth/google">
+    Log In with Google
+  </a>
+  <br>
+</div>
