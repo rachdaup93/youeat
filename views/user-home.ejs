@@ -1,0 +1,81 @@
+<main class="main flex row">
+    <div id="profile" class="col-md-3 col-sm-12 col-xs-12">
+      <div id="profile-info">
+        <img id="profile-image" class="img-circle" src="/_images/users_images/free_eater.png" alt="">
+        <h1>Hi, <%= currentUser.firstName %></h1>
+        <p><strong>Diet: </strong><%=currentUser.diet%> </p>
+        <p><strong>About:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+        <p><strong>Hobbies:</strong> Cooking, Hiking, Yoga</p>
+        <a id=""class="button-blue"> Update Profile </a>
+        <a class="button-brown"> Browse Recipes </a>
+      </div>
+      <div id="follow">
+        <h2>Following</h2>
+        <div class="row flex">
+          <div class="follower col-md-5">
+            <img class="img-circle" src="/_images/users_images/vegetarian.png" alt />
+            <a href="#">username</a>
+          </div>
+          <div class="follower col-md-5">
+            <img class="img-circle" src="/_images/users_images/vegetarian.png" alt />
+            <a href="#">username</a>
+        </div>
+          </div>
+      </div>
+    </div>
+    <div id="calendar-section" class="col-md-8 col-sm-12 col-xs-12">
+    <h1>My Week's Meal Plan</h1>
+          <div id="calendar" class="container-fluid">
+            <div id="header" class="row">
+              <div class="col-md-1 header"></div>
+              <div class="col-md-1 header">S</div>
+              <div class="col-md-1 header">M</div>
+              <div class="col-md-1 header">T</div>
+              <div class="col-md-1 header">W</div>
+              <div class="col-md-1 header">R</div>
+              <div class="col-md-1 header">F</div>
+              <div class="col-md-1 header">S</div>
+            </div>
+            <div id="breakfast" class="row">
+              <div class="col-md-1 header">Breakfast</div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+            </div>
+            <div id="lunch" class="row">
+              <div class="col-md-1 header">Lunch</div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+            </div>
+            <div id="dinner" class="row">
+              <div class="col-md-1 header">Dinner</div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+            </div>
+            <div id="dessert" class="row">
+              <div class="col-md-1 header">Dessert</div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+            </div>
+          </div>
+    </div>
+</main>

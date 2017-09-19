@@ -1,8 +1,9 @@
 //required packages and models for authenication router
-const express = require('express');
-const router  = express.Router();
+const express   = require('express');
+const router    = express.Router();
 const UserModel = require('../models/user-model.js');
-const bcrypt = require('bcrypt');
+const passport  = require('passport');
+const bcrypt    = require('bcrypt');
 
 // end of packages and models
 
@@ -28,8 +29,9 @@ router.post('/process-signup', (req,res,next)=>{
       req.body.password  === '') {
         // if any required fields are left blank, a flash message will be
         // render after the user is redirected to the signup page
-        req.flash('errorMessage','The following are required to sign up:First Name, Last Name, Email, username, password')
+        req.flash('errorMessage','Required: first name, last name, email, username, password')
         res.redirect('/signup');
+        return;
       }
 
   // if the passwords don't match, a flash message will be
@@ -96,6 +98,12 @@ router.post('/process-signup', (req,res,next)=>{
 
 // renders log on page
 router.get('/login',  (req,res,next)=>{
+  // redirect to home if you are already logged in
+  if (req.user) {
+      res.redirect('/');
+      return;
+  }
+
   // flash message if errors occur during passport process
   res.locals.errorMessage = req.flash('errorMessage');
   res.locals.logoutFeedback = req.flash('logoutMessage');
@@ -106,5 +114,25 @@ router.get('/login',  (req,res,next)=>{
   res.render('auth/login');
 });
 
+router.post('/process-login',
+ // name of strategy   settings object
+  passport.authenticate('local', {
+      successRedirect: '/',
+      failureRedirect: '/login',
+      failureFlash: true
+  })
+);
+
+
+router.get('/logout', (req, res, next) => {
+    // special passport method for clearing the session
+    // (emptying the bowl)
+    req.logout();
+
+    // set a flash message for feedback after the redirect
+    req.flash('logoutSuccess', 'Log out successful.');
+
+    res.redirect('/login');
+});
 //exports authenication router
 module.exports = router;

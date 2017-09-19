@@ -13,12 +13,15 @@
       <nav>
         <!-- <a href="/howitworks"></a>
         <a href="/aboutme"></a> -->
+        <a id="menu" href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+        <a id="home" href="/"><img src="/_images/logo.png" alt="" /></a>
 <%        if(!currentUser){ %>
-          <a id="signup" href="/signup">Sign Up</a>
-          <a class="button-brown" id="log" href="/login">Log In</a>
+          <a id="log" href="/login"><span class="glyphicon glyphicon-log-in"></span></a>
 <%        }else{ %>
-          <%= req.user.username %>
-          <a class="button-brown" href="/logout">Log Out</a>
+          <div id="logout" class="flex">
+            <span><%= currentUser.username %></span>
+            <a id="log" href="/logout"><span class="glyphicon glyphicon-log-out"></span></a>
+          </div>
   <%      } %>
       </nav>
     </header>

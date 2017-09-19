@@ -6,15 +6,19 @@ const userSchema = new Schema({
     email: { type: String,required: true },
     username: { type: String,required: true },
     encryptedPassword: { type: String, required: true },
-    diet: { type: String, default:"Free Eater"},
-
+    diet: { type: String, required: true, default:"Free Eater"},
+    profile: {
+      image: {type: String, required: true, default: "free_eater.png"},
+      summary: {type: String},
+      hobbies: {type: String}
+    },
     // for Facebook login users
     facebookID: { type: String },
 
     // determines whether you are an admin or not
     role: {
       type: String,
-      enum: [ 'normal', 'admin' ],
+      enum: [ 'normal', 'admin', 'editor' ],
       default: 'normal'
     }},
   // optional settings object for this schema

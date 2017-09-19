@@ -1,44 +1,45 @@
-<div class="form-div">
-  <h1> Sign Up </h1>
-
-  <form id="form" method="post" action="/process-signup">
-
-    <% if (typeof errorMessage !== 'undefined') { %>
+<main class="main">
+  <div class="form-div">
+    <% if (  errorMessage.length > 0) { %>
       <p class="error-message"> <%= errorMessage %> </p>
     <% } %>
+    <h1> Sign Up </h1>
 
-    <div>
-      <label for="firstName">First Name</label>
-      <input id="firstName" type="text" name="firstName" value="">
-    </div>
-    <div>
-      <label for="lastName">Last Name</label>
-      <input id="lastName" type="text" name="lastName" value="">
-    </div>
-    <div>
-      <label for="email">Email</label>
-      <input id="email" type="email" name="email" value="">
-    </div>
-    <div>
-      <label for="username">Username</label>
-      <input id="username" type="text" name="username" value="">
-    </div>
-    <div>
-      <label for="password">Password</label>
-      <input id="password" type="password" name="password">
-    </div>
-    <div>
-      <label for="passwordMatch">Repeat Password</label>
-      <input id="passwordMatch" type="password" name="passwordMatch">
-    </div>
-    <div>
-      <label for="mealType">I am a</label>
-      <select class="form-control" id="diet">
-        <option>Free Eater</option>
-        <option>Vegetarian</option>
-        <option>Pescetarian</option>
-      </select>
-    </div>
-      <button class="button-brown"> Create an Account </button>
-  </form>
-</div>
+    <form id="form" method="post" action="/process-signup">
+
+      <div>
+        <label for="firstName">First Name</label>
+        <input id="firstName" type="text" name="firstName" value="">
+      </div>
+      <div>
+        <label for="lastName">Last Name</label>
+        <input id="lastName" type="text" name="lastName" value="">
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" value="">
+      </div>
+      <div>
+        <label for="username">Username</label>
+        <input id="username" type="text" name="username" value="">
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password">
+      </div>
+      <div>
+        <label for="passwordMatch">Repeat Password</label>
+        <input id="passwordMatch" type="password" name="passwordMatch">
+      </div>
+      <div>
+        <label for="mealType">I am a</label>
+        <select class="form-control" id="diet">
+          <option>Free Eater</option>
+          <option>Vegetarian</option>
+          <option>Pescetarian</option>
+        </select>
+      </div>
+        <button class="button-brown"> Create an Account </button>
+    </form>
+  </div>
+</main>
