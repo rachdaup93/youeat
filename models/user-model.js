@@ -9,8 +9,8 @@ const userSchema = new Schema({
     diet: { type: String, required: true, default:"Free Eater"},
     profile: {
       image: {type: String, required: true, default: "free_eater.png"},
-      summary: {type: String},
-      hobbies: {type: String}
+      summary: {type: String, default:""},
+      hobbies: {type: String, default:""}
     },
     // for Facebook login users
     facebookID: { type: String },

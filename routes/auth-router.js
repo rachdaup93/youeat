@@ -4,8 +4,14 @@ const router    = express.Router();
 const UserModel = require('../models/user-model.js');
 const passport  = require('passport');
 const bcrypt    = require('bcrypt');
+const multer    = require('multer');
 
 // end of packages and models
+
+// multer file uploads implementation
+const myUploader =  multer({
+  dest: __dirname + '/../public/_images/users_images/uploads/'
+});
 
 // middleware to provide stylesheet for forms
 router.use((req,res,next)=>{
@@ -134,5 +140,57 @@ router.get('/logout', (req, res, next) => {
 
     res.redirect('/login');
 });
+
+router.get('/profile-edit', (req,res,next)=>{
+  if(!req.user){
+    req.flash('securityError', 'Log in to edit your profile.');
+    res.redirect('/login');
+    return;
+  }
+  res.locals.script = "form.js";
+  res.locals.errorMessage = req.flash('errorMessage');
+  res.render('auth/profile-edit');
+})
+
+router.post('/process-profile', myUploader.single('image'),(req, res, next) => {
+    // redirect to the log in page if NOT logged in
+    if (!req.user) {
+        req.flash('securityError', 'Log in to edit your profile.');
+        res.redirect('/login');
+        return;
+    }
+
+    UserModel.findById(
+      req.user._id,
+
+      (err, userFromDb) => {
+          if (err) {
+              next(err);
+              return;
+          }
+          userFromDb.firstName = req.body.firstName;
+          userFromDb.lastName = req.body.lastName;
+          userFromDb.diet = req.body.diet;
+          if(req.file){
+            console.log('test2');
+          userFromDb.profile.image = '/uploads/' + req.file.filename;
+        }
+          userFromDb.profile.summary = req.body.summary;
+          userFromDb.profile.hobbies = req.body.hobbies;
+
+          userFromDb.save((err) => {
+              if (err) {
+                  next(err);
+                  return;
+              }
+
+              req.flash('updateSuccess', 'Profile update successful.');
+
+              res.redirect('/');
+          });
+      }
+    );
+});
+
 //exports authenication router
 module.exports = router;

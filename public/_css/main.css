@@ -56,9 +56,44 @@ a {
 a:hover{
   text-decoration: none;
 }
+#menu-content,
 #menu{
   background-color: rgb(255, 255, 255);
   color: rgb(0,0,0);
+}
+
+#menu-content{
+  position: absolute;
+  width: 300px;
+  height: 500px;
+  z-index: 5;
+  top: 102px;
+  left: -300px;
+  transition: left 0.5s;
+}
+
+#menu:hover + #menu-content,
+#menu-content:hover{
+  left: 0;
+  box-shadow: 10px 0 5px rgba(0,0,0, .5);
+}
+
+#menu-content p,
+#menu-content a{
+  font-size: 20px;
+  padding: 10px;
+}
+
+#menu-content a{
+  display: block;
+
+  border-bottom: 1px rgb(128,128,128) solid;
+  color: rgb(0,0,0);
+}
+
+#menu-content a:hover{
+  background-color: rgb(0,0,0);
+  color: rgb(255, 255, 255);
 }
 
 #home{
@@ -66,6 +101,11 @@ a:hover{
 }
 #home img{
   height: 100%;
+}
+
+#home img:hover{
+  margin-left: -15px;
+  height: 110%;
 }
 #log,
 .button-brown{

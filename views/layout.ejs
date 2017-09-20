@@ -7,19 +7,31 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
     <link rel="stylesheet" href="/_css/main.css" />
     <link rel="stylesheet" href="<%=stylesheet%>" />
+      <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
   </head>
   <body>
     <header>
       <nav>
-        <!-- <a href="/howitworks"></a>
-        <a href="/aboutme"></a> -->
-        <a id="menu" href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+
+        <a id="menu"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+        <div id="menu-content">
+          <% if(currentUser){ %>
+          <p><%= currentUser.username %></p>
+          <a href="/recipes">Browse All Recipes</a>
+          <a href="/recipes/breakfast">Breakfast</a>
+          <a href="/recipes/lunch">Lunch</a>
+          <a href="/recipes/dinner">Dinner</a>
+          <a href="/recipes/dessert">Dessert</a>
+          <% } %>
+          <a href="/howitworks">How it works</a>
+          <a href="/aboutme">About Me</a>
+
+        </div>
         <a id="home" href="/"><img src="/_images/logo.png" alt="" /></a>
 <%        if(!currentUser){ %>
           <a id="log" href="/login"><span class="glyphicon glyphicon-log-in"></span></a>
 <%        }else{ %>
           <div id="logout" class="flex">
-            <span><%= currentUser.username %></span>
             <a id="log" href="/logout"><span class="glyphicon glyphicon-log-out"></span></a>
           </div>
   <%      } %>
@@ -29,7 +41,9 @@
   <footer>
     <p>Copyright &copy; September 2017</p>
   </footer>
-  <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <% if(typeof script !== 'undefined'){ %>
+    <script type="text/javascript" src="/_js/<%=script%>"></script>
+  <% } %>
   </body>
 </html>

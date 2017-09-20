@@ -33,15 +33,16 @@ const bcrypt = require('bcrypt');
 // "passport.use()" sets up a new strategy
 passport.use(
   new LocalStrategy({
-        usernameField: 'email',
+        usernameField: 'userValue',
         passwordField: 'password'
     },
 
-    (emailValue, passValue, done) => {
+    (userValue, passValue, done) => {
         // find the user in the DB with that email
-        UserModel.findOne(
-          { email: emailValue},
-
+        UserModel.findOne({
+          $or:[{ email: userValue},
+          {username: userValue}]
+        },
           (err, userFromDb) => {
               if (err) {
                   done(err);
@@ -50,14 +51,14 @@ passport.use(
 
               // "userFromDb" will be "null" if we didn't find anything
               if (userFromDb === null) {
-                  done(null, false, { message: 'Invalid email or password.blah' });
+                  done(null, false, { message: 'Invalid email or password.' });
                   return;
               }
               // validates password
               const isGoodPassword = bcrypt.compareSync(passValue, userFromDb.encryptedPassword);
 
               if (isGoodPassword === false) {
-                  done(null, false, { message: 'Invalid email or password.2' });
+                  done(null, false, { message: 'Invalid email or password.' });
                   return;
               }
               console.log('test');

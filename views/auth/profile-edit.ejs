@@ -1,0 +1,46 @@
+<main class="main">
+  <div class="form-div">
+    <% if (  errorMessage.length > 0) { %>
+      <p class="error-message"> <%= errorMessage %> </p>
+    <% } %>
+    <h1> Profile Update</h1>
+
+<form id="form" method="post" action="/process-profile" enctype="multipart/form-data">
+
+      <div>
+        <label for="firstName">First Name</label>
+        <input id="firstName" type="text" name="firstName" value="<%=currentUser.firstName%>">
+      </div>
+      <div>
+        <label for="lastName">Last Name</label>
+        <input id="lastName" type="text" name="lastName" value="<%=currentUser.lastName%>">
+      </div>
+      <div class="preview-box flex">
+          <img id="preview" src="/_images/users_images/<%= currentUser.profile.image %>" alt="">
+        <label for="image">Upload New Picture</label>
+        <input id="image" type="file" name="image" value="">
+      </div>
+      <div>
+        <label for="hobbies">Hobbies</label>
+        <input id="hobbies" name="hobbies" type="text" value="<%=currentUser.profile.hobbies%>">
+      </div>
+      <div>
+        <label for="summary">Summary</label>
+        <textarea id="summary" name="summary"><%=currentUser.profile.summary%></textarea>
+      </div>
+      <div>
+        <label for="mealType">I am a</label>
+        <select class="form-control" id="diet" name="diet">
+          <option value="Free Eater">Free Eater</option>
+          <option value="Vegetarian">Vegetarian</option>
+          <option value="Pescetarian">Pescetarian</option>
+        </select>
+      </div>
+        <button class="button-brown"> Update </button>
+    </form>
+  </div>
+</main>
+
+<script type="text/javascript">
+  $( "option[value|='<%=currentUser.diet%>']" ).attr('selected', 'selected');
+</script>

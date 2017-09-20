@@ -4,7 +4,6 @@ const router  = express.Router();
 router.get('/', (req, res, next) => {
   //logged in users
     if (req.user) {
-        res.locals.stylesheet = "/_css/index.css";
       res.locals.stylesheet = "/_css/user-home.css";
       res.render('user-home.ejs');
     }
