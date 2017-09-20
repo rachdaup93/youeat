@@ -8,7 +8,7 @@ const userSchema = new Schema({
     encryptedPassword: { type: String, required: true },
     diet: { type: String, required: true, default:"Free Eater"},
     profile: {
-      image: {type: String, required: true, default: "free_eater.png"},
+      image: {type: String, required: true, default: "/free_eater.png"},
       summary: {type: String, default:""},
       hobbies: {type: String, default:""}
     },
