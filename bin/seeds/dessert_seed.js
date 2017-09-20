@@ -21,7 +21,7 @@ const recipeModel = mongoose.model('recipes', recipeSchema);
 
 recipeModel.create({
    name: "Banoffee Pie",
-   imagePath: "/recipes_images/dessert/banoffeepie.png",
+   imagePath: "dessert/banoffeepie.png",
    restrict: "Vegetarian",
    mealType: "Dessert",
    servings: 8,
@@ -55,7 +55,7 @@ recipeModel.create({
 
 recipeModel.create({
    name: "Mini Strawberry-Rhubarb Pies",
-   imagePath: "/recipes_images/dessert/rhubarspie.png",
+   imagePath: "dessert/rhubarspie.png",
    restrict: "Vegetarian",
    mealType: "Dessert",
    servings: 12,
@@ -95,7 +95,7 @@ recipeModel.create({
 
 recipeModel.create({
    name: "Puffy Peanut Butter Chocolate Chip Cookies",
-   imagePath: "/recipes_images/dessert/peanutbuttercookies.png",
+   imagePath: "dessert/peanutbuttercookies.png",
    restrict: "Vegetarian",
    mealType: "Dessert",
    servings: 12,
@@ -127,7 +127,7 @@ recipeModel.create({
 
 recipeModel.create({
    name: "Peanut Butter Lava Cookies",
-   imagePath: "/recipes_images/dessert/peanutbutterlavacookies.png",
+   imagePath: "dessert/peanutbutterlavacookies.png",
    restrict: "Vegetarian",
    mealType: "Dessert",
    servings: 12,
@@ -154,7 +154,7 @@ recipeModel.create({
 
 recipeModel.create({
    name: "Secret Cake",
-   imagePath: "/recipes_images/dessert/secretcake.png",
+   imagePath: "dessert/secretcake.png",
    restrict: "Vegetarian",
    mealType: "Dessert",
    servings: 12,

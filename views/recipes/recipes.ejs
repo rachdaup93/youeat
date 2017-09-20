@@ -1,0 +1,20 @@
+<main class="main row">
+  <h1>Recipes - <%=currentUser.diet%></h1>
+  <div id="recipes-list">
+    <div class="row flex">
+    <%  for(let i = 0; i < recipesList.length; i++){ %>
+    <%    if(i%4 === 0 && i !== 0){ %>
+            </div>
+          <div class="row flex">
+        <% }%>
+        <div class="recipe col-md-3">
+          <img src="/_images/recipes_images/<%= recipesList[i].imagePath%>" alt="">
+          <a class="overlay flex" href="/recipes-details/<%=recipesList[i]._id%>"><%=recipesList[i].name%></a>
+        </div>
+      <%}%>
+    </div>
+  </div>
+  <!-- <div id="filter" class="col-md-3">
+
+  </div> -->
+</main>

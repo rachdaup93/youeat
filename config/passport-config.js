@@ -61,7 +61,6 @@ passport.use(
                   done(null, false, { message: 'Invalid email or password.' });
                   return;
               }
-              console.log('test');
               // If information is correct, sends passport the user document.
               done(null, userFromDb);
           });

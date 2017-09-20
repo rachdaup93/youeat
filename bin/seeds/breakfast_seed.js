@@ -21,7 +21,7 @@ const recipeModel = mongoose.model('recipes', recipeSchema);
 
 recipeModel.create({
    name: "Chocolate + Banana Breads",
-   imagePath: "/recipes_images/breakfast/bananabread.png",
+   imagePath: "breakfast/bananabread.png",
    restrict: "Vegetarian",
    mealType: "Breakfast",
    servings: 1,
@@ -45,7 +45,7 @@ recipeModel.create({
  });
 recipeModel.create({
    name: "Hash Brown Bake with Eggs + Smoked Salmon",
-   imagePath: "/breakfast/hashbrownbake.png",
+   imagePath: "breakfast/hashbrownbake.png",
    restrict: "Pescetarian",
    mealType: "Breakfast",
    servings: 6,
@@ -79,7 +79,7 @@ recipeModel.create({
 
 recipeModel.create({
    name: "Everything Cream Cheese BLTs on Everything Bagels",
-   imagePath: "recipes_images/breakfast/bltbagel.png",
+   imagePath: "breakfast/bltbagel.png",
    restrict: "Free Eater",
    mealType: "Breakfast",
    servings: 4,
@@ -114,7 +114,7 @@ recipeModel.create({
 
 recipeModel.create({
    name: "Bell Pepper + Manchego Crustless Quiche with Greens",
-   imagePath: "/recipes_images/breakfast/quiche.png",
+   imagePath: "breakfast/quiche.png",
    restrict: "Vegetarian",
    mealType: "Breakfast",
    servings: 4,
@@ -150,7 +150,7 @@ recipeModel.create({
 
 recipeModel.create({
    name: "Lean + Luxurious Eggs Benedict",
-   imagePath: "/recipes_images/breakfast/eggbenedict.png",
+   imagePath: "breakfast/eggbenedict.png",
    restrict: "Free Eater",
    mealType: "Breakfast",
    servings: 4,

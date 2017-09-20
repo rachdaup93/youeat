@@ -21,7 +21,7 @@ const recipeModel = mongoose.model('recipes', recipeSchema);
 
 recipeModel.create({
    name: "Seven-Layer Burritos",
-   imagePath: "/recipes_images/dinner/refriedbeanburritos.png",
+   imagePath: "dinner/refriedbeanburritos.png",
    restrict: "Vegetarian",
    mealType: "Dinner",
    servings: 4,
@@ -62,7 +62,7 @@ recipeModel.create({
 
 recipeModel.create({
    name: "Chipotle Chicken Tortilla Salad",
-   imagePath: "recipes_images/dinner/chipotlesalad.png",
+   imagePath: "dinner/chipotlesalad.png",
    restrict: "Free Eater",
    mealType: "Dinner",
    servings: 4,
@@ -103,7 +103,7 @@ recipeModel.create({
 
 recipeModel.create({
    name: "Grilled cod with Blackberry Sauce",
-   imagePath: "recipes_images/dinner/codblackberry.png",
+   imagePath: "dinner/codblackberry.png",
    restrict: "Pescetarian",
    mealType: "Dinner",
    servings: 4,
@@ -133,7 +133,7 @@ recipeModel.create({
 
 recipeModel.create({
    name: "Red Chicken Marsala",
-   imagePath: "recipes_images/dinner/redchicken.png",
+   imagePath: "dinner/redchicken.png",
    restrict: "Free Eater",
    mealType: "Dinner",
    servings: 4,
@@ -172,7 +172,7 @@ recipeModel.create({
 
 recipeModel.create({
    name: "Lemon Cream Shrimp Scampi",
-   imagePath: "recipes_images/dinner/shrimpscampi.png",
+   imagePath: "dinner/shrimpscampi.png",
    restrict: "Pescetarian",
    mealType: "Dinner",
    servings: 4,

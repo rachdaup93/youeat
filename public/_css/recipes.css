@@ -1,0 +1,114 @@
+.main{
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+h1{
+  color: rgb(255,255,255);
+  text-align: center;
+  font-size: 52px;
+  margin-top: -50px;
+  letter-spacing: 10px;
+}
+#recipes-list .row{
+    justify-content: center;
+    min-height: 250px;
+}
+
+.recipe{
+  position: relative;
+  padding: 0;
+  box-sizing: border-box;
+}
+.recipe img{
+  width: 100%;
+  height: 100%;
+}
+.overlay{
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  top:0;
+  left: 0;
+  background-color: rgba(0,0,0,.8);
+  width: 100%;
+  height: 100%;
+  display: none;
+  color: rgb(255,255,255);
+  font-size: 30px;
+  text-align: center;
+}
+#filter{
+  background-color: rgba(0,0,0,.8);
+}
+
+.recipe img:hover + .overlay,
+.overlay:hover{
+  display: flex;
+    color: rgb(255,255,255);
+}
+
+#recipe-details{
+  color: rgb(255,255,255);
+  background-color: rgba(0,0,0,.8);
+  margin-top: 150px;
+  padding: 30px;
+}
+
+#recipe-details h1{
+  font-size: 38px;
+  text-align: left;
+  margin-top: 0;
+}
+
+#recipe-details #upper{
+  align-items: center;
+}
+
+#recipe-image{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#upper div{
+  height: 100%;
+}
+#recipe-image img{
+    width: 30vw;
+    height: auto;
+    border: 7px solid rgb(255,255,255);
+    box-shadow: 0 10px 5px rgba(0,0,0, .9);
+}
+
+#recipe-details li{
+  font-size: 24px;
+}
+
+#meal-plan{
+  margin-top: 15px;
+  padding: 15px;
+  width: 100%;
+  background-color: rgb(255,192,0);
+  position: relative;
+  color: rgb(0,0,0);
+}
+#meal-plan label{
+  font-size: 18px;
+}
+
+#meal-plan select{
+    width: 30%;
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 0;
+    border: none;
+}
+
+#meal-plan button{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+}

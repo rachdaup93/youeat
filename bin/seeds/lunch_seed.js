@@ -21,7 +21,7 @@ const recipeModel = mongoose.model('recipes', recipeSchema);
 
 recipeModel.create({
    name: "Chicken-Chorizo Tacos",
-   imagePath: "/recipes_imageslunch/chickentacos.png",
+   imagePath: "lunch/chickentacos.png",
    restrict: "Free Eater",
    mealType: "Lunch",
    servings: 4,
@@ -56,7 +56,7 @@ recipeModel.create({
 
 recipeModel.create({
    name: "Brown Macaroni with Four Cheeses + Cauliflower",
-   imagePath: "/lunch/maccheesecauliflower.png",
+   imagePath: "lunch/maccheesecauliflower.png",
    restrict: "Vegetarian",
    mealType: "Lunch",
    servings: 6,
@@ -96,7 +96,7 @@ recipeModel.create({
 
 recipeModel.create({
    name: "Radish, Orange, and Arugula Salad with Cumin Vinaigrette",
-   imagePath: "recipes_images/lunch/orangesalad.png",
+   imagePath: "lunch/orangesalad.png",
    restrict: "Vegetarian",
    mealType: "Lunch",
    servings: 4,
@@ -131,7 +131,7 @@ recipeModel.create({
 
 recipeModel.create({
    name: "Tilapia Po'Boy",
-   imagePath: "/recipes_images/lunch/tilapiapoboy.png",
+   imagePath: "lunch/tilapiapoboy.png",
    restrict: "Pescetarian",
    mealType: "Lunch",
    servings: 4,
@@ -169,7 +169,7 @@ recipeModel.create({
 
 recipeModel.create({
    name: "Tilapia + Sweet Potato Chips",
-   imagePath: "/recipes_images/breakfast/eggbenedict.png",
+   imagePath: "lunch/tilapiastrips.png",
    restrict: "Pescetarian",
    mealType: "Lunch",
    servings: 4,

@@ -1,6 +1,5 @@
 <main class="main">
   <div class="form-div">
-    <h1> Log In </h1>
 
     <% if (errorMessage.length > 0) { %>
       <p class="error-message"> <%= errorMessage %> </p>
@@ -9,13 +8,11 @@
     <% if (logoutFeedback.length > 0) { %>
       <p class="success-message"> <%= logoutFeedback %> </p>
     <% } %>
-
+    <% if (flashError.length > 0) { %>
+      <p class="error-message"> <%= flashError %> </p>
+    <% } %>
+    <h1> Log In </h1>
     <form id="form" method="post" action="/process-login">
-
-      <% if (flashError.length > 0) { %>
-        <p class="error-message"> <%= flashError %> </p>
-      <% } %>
-
       <div>
         <label for="email-input"> Username or Email </label>
         <input  id="email-input" name="userValue" type="text" placeholder="">

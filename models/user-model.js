@@ -12,8 +12,42 @@ const userSchema = new Schema({
       summary: {type: String, default:""},
       hobbies: {type: String, default:""}
     },
-    // for Facebook login users
-    facebookID: { type: String },
+    breakfast:{
+      sunday:{type:Schema.Types.ObjectId},
+      monday:{type:Schema.Types.ObjectId},
+      tuesday:{type:Schema.Types.ObjectId},
+      wednesday:{type:Schema.Types.ObjectId},
+      thursday:{type:Schema.Types.ObjectId},
+      friday:{type:Schema.Types.ObjectId},
+      saturday:{type:Schema.Types.ObjectId}
+    },
+    lunch:{
+      sunday:{type:Schema.Types.ObjectId},
+      monday:{type:Schema.Types.ObjectId},
+      tuesday:{type:Schema.Types.ObjectId},
+      wednesday:{type:Schema.Types.ObjectId},
+      thursday:{type:Schema.Types.ObjectId},
+      friday:{type:Schema.Types.ObjectId},
+      saturday:{type:Schema.Types.ObjectId}
+    },
+    dinner:{
+      sunday:{type:Schema.Types.ObjectId},
+      monday:{type:Schema.Types.ObjectId},
+      tuesday:{type:Schema.Types.ObjectId},
+      wednesday:{type:Schema.Types.ObjectId},
+      thursday:{type:Schema.Types.ObjectId},
+      friday:{type:Schema.Types.ObjectId},
+      saturday:{type:Schema.Types.ObjectId}
+    },
+    dessert:{
+      sunday:{type:Schema.Types.ObjectId},
+      monday:{type:Schema.Types.ObjectId},
+      tuesday:{type:Schema.Types.ObjectId},
+      wednesday:{type:Schema.Types.ObjectId},
+      thursday:{type:Schema.Types.ObjectId},
+      friday:{type:Schema.Types.ObjectId},
+      saturday:{type:Schema.Types.ObjectId}
+    },
 
     // determines whether you are an admin or not
     role: {

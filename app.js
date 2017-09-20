@@ -64,6 +64,9 @@ app.use('/', index);
 
 const authRouter = require('./routes/auth-router');
 app.use(authRouter);
+
+const recipeRouter = require('./routes/recipes-router');
+app.use(recipeRouter);
 // END OF ROUTES
 
 // catch 404 and forward to error handler

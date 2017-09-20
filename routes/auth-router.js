@@ -143,7 +143,7 @@ router.get('/logout', (req, res, next) => {
 
 router.get('/profile-edit', (req,res,next)=>{
   if(!req.user){
-    req.flash('securityError', 'Log in to edit your profile.');
+    req.flash('errorMessage', 'Log in to edit your profile.');
     res.redirect('/login');
     return;
   }
@@ -155,7 +155,7 @@ router.get('/profile-edit', (req,res,next)=>{
 router.post('/process-profile', myUploader.single('image'),(req, res, next) => {
     // redirect to the log in page if NOT logged in
     if (!req.user) {
-        req.flash('securityError', 'Log in to edit your profile.');
+        req.flash('errorMessage', 'Log in to edit your profile.');
         res.redirect('/login');
         return;
     }
@@ -172,7 +172,6 @@ router.post('/process-profile', myUploader.single('image'),(req, res, next) => {
           userFromDb.lastName = req.body.lastName;
           userFromDb.diet = req.body.diet;
           if(req.file){
-            console.log('test2');
           userFromDb.profile.image = '/uploads/' + req.file.filename;
         }
           userFromDb.profile.summary = req.body.summary;
