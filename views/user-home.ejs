@@ -50,33 +50,33 @@
             </div>
             <div id="breakfast" class="row">
               <div class="col-md-1 header">Breakfast</div>
-              <div class="col-md-1"></div>
-              <div class="col-md-1"></div>
-              <div class="col-md-1"></div>
-              <div class="col-md-1"></div>
-              <div class="col-md-1"></div>
-              <div class="col-md-1"></div>
-              <div class="col-md-1"></div>
+              <div class="col-md-1 weekday"></div>
+              <div class="col-md-1 weekday"></div>
+              <div class="col-md-1 weekday"></div>
+              <div class="col-md-1 weekday"></div>
+              <div class="col-md-1 weekday"></div>
+              <div class="col-md-1 weekday"></div>
+              <div class="col-md-1 weekday"></div>
             </div>
             <div id="lunch" class="row">
               <div class="col-md-1 header">Lunch</div>
-              <div class="col-md-1"></div>
-              <div class="col-md-1"></div>
-              <div class="col-md-1"></div>
-              <div class="col-md-1"></div>
-              <div class="col-md-1"></div>
-              <div class="col-md-1"></div>
-              <div class="col-md-1"></div>
+              <div class="col-md-1 weekday"></div>
+              <div class="col-md-1 weekday"></div>
+              <div class="col-md-1 weekday"></div>
+              <div class="col-md-1 weekday"></div>
+              <div class="col-md-1 weekday"></div>
+              <div class="col-md-1 weekday"></div>
+              <div class="col-md-1 weekday"></div>
             </div>
             <div id="dinner" class="row">
               <div class="col-md-1 header">Dinner</div>
-              <div class="col-md-1"></div>
-              <div class="col-md-1"></div>
-              <div class="col-md-1"></div>
-              <div class="col-md-1"></div>
-              <div class="col-md-1"></div>
-              <div class="col-md-1"></div>
-              <div class="col-md-1"></div>
+              <div class="col-md-1 weekday"></div>
+              <div class="col-md-1 weekday"></div>
+              <div class="col-md-1 weekday"></div>
+              <div class="col-md-1 weekday"></div>
+              <div class="col-md-1 weekday"></div>
+              <div class="col-md-1 weekday"></div>
+              <div class="col-md-1 weekday"></div>
             </div>
             <div id="dessert" class="row">
               <div class="col-md-1 header">Dessert</div>
@@ -91,3 +91,20 @@
           </div>
     </div>
 </main>
+
+<script type="text/javascript">
+calendarButtons(<%-currentUser.breakfast%>, 'breakfast');
+calendarButtons(<%-currentUser.lunch%>, 'lunch');
+calendarButtons(<%-currentUser.dinner%>,'dinner');
+calendarButtons(<%-currentUser.dessert%>,'dessert');
+
+function calendarButtons(mealRow, mealType){
+  let divs = $(`#${mealType} > .weekday`).toArray();
+   for(let i = 0; i < divs.length; i++){
+     let id = Object.values(mealRow)[i];
+     if(id !== ""){
+       $(divs[i]).html(`<a href="/recipes-details/${id}"></a>`);
+     }
+   }
+}
+</script>

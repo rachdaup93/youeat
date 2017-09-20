@@ -13,40 +13,40 @@ const userSchema = new Schema({
       hobbies: {type: String, default:""}
     },
     breakfast:{
-      sunday:{type:Schema.Types.ObjectId},
-      monday:{type:Schema.Types.ObjectId},
-      tuesday:{type:Schema.Types.ObjectId},
-      wednesday:{type:Schema.Types.ObjectId},
-      thursday:{type:Schema.Types.ObjectId},
-      friday:{type:Schema.Types.ObjectId},
-      saturday:{type:Schema.Types.ObjectId}
+      sunday:{type:String, default: ""},
+      monday:{type:String, default: ""},
+      tuesday:{type:String, default: ""},
+      wednesday:{type:String, default: ""},
+      thursday:{type:String, default: ""},
+      friday:{type:String, default: ""},
+      saturday:{type:String, default: ""}
     },
     lunch:{
-      sunday:{type:Schema.Types.ObjectId},
-      monday:{type:Schema.Types.ObjectId},
-      tuesday:{type:Schema.Types.ObjectId},
-      wednesday:{type:Schema.Types.ObjectId},
-      thursday:{type:Schema.Types.ObjectId},
-      friday:{type:Schema.Types.ObjectId},
-      saturday:{type:Schema.Types.ObjectId}
+      sunday:{type:String, default: ""},
+      monday:{type:String, default: ""},
+      tuesday:{type:String, default: ""},
+      wednesday:{type:String, default: ""},
+      thursday:{type:String, default: ""},
+      friday:{type:String, default: ""},
+      saturday:{type:String, default: ""}
     },
     dinner:{
-      sunday:{type:Schema.Types.ObjectId},
-      monday:{type:Schema.Types.ObjectId},
-      tuesday:{type:Schema.Types.ObjectId},
-      wednesday:{type:Schema.Types.ObjectId},
-      thursday:{type:Schema.Types.ObjectId},
-      friday:{type:Schema.Types.ObjectId},
-      saturday:{type:Schema.Types.ObjectId}
+      sunday:{type:String, default: ""},
+      monday:{type:String, default: ""},
+      tuesday:{type:String, default: ""},
+      wednesday:{type:String, default: ""},
+      thursday:{type:String, default: ""},
+      friday:{type:String, default: ""},
+      saturday:{type:String, default: ""}
     },
     dessert:{
-      sunday:{type:Schema.Types.ObjectId},
-      monday:{type:Schema.Types.ObjectId},
-      tuesday:{type:Schema.Types.ObjectId},
-      wednesday:{type:Schema.Types.ObjectId},
-      thursday:{type:Schema.Types.ObjectId},
-      friday:{type:Schema.Types.ObjectId},
-      saturday:{type:Schema.Types.ObjectId}
+      sunday:{type:String, default: ""},
+      monday:{type:String, default: ""},
+      tuesday:{type:String, default: ""},
+      wednesday:{type:String, default: ""},
+      thursday:{type:String, default: ""},
+      friday:{type:String, default: ""},
+      saturday:{type:String, default: ""}
     },
 
     // determines whether you are an admin or not

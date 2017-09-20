@@ -90,7 +90,9 @@ router.post('/schedule-meal/:recipe_id',(req,res,next)=>{
                 next(err);
                 return;
             }
-            userFromDb[req.body.mealType[req.body.day]] = req.params.recipe_id;
+            const meal = userFromDb[req.body.mealType];
+            meal[req.body.day] = req.params.recipe_id;
+            userFromDb[req.body.mealType] = meal;
 
             userFromDb.save((err) => {
                 if (err) {
