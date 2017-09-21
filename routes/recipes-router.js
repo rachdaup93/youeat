@@ -118,8 +118,7 @@ router.post('/schedule-meal/:recipe_id',(req,res,next)=>{
                     return;
                 }
 
-                req.flash('updateSuccess', 'Meal Added.');
-
+                req.flash('successMessage', 'Meal Added.');
                 res.redirect('/');
             });
         }
@@ -204,7 +203,8 @@ router.post('/process-recipe', myUploader.single('imagePath'), (req,res,next)=>{
           return;
         }
         // redirects the user to the home page if the save was successful
-        res.redirect('/');
+        req.flash('successMessage', 'New Recipe Added.');
+        res.redirect('/my-recipes');
       });
 });
 
@@ -222,6 +222,7 @@ router.get('/my-recipes', (req, res, next)=>{
         return;
       }
       res.locals.myRecipes = myRecipes;
+      res.locals.successFeedback = req.flash('successMessage');
       res.render('recipes/my-recipes');
     });
 });
@@ -246,7 +247,7 @@ router.post('/recipe-delete/:recipe_id',(req, res, next)=>{
             next(err);
             return;
           }
-          req.flash('successMessage', recipeInfo.name +'has been deleted.');
+          req.flash('successMessage', recipeInfo.name +' has been deleted.');
           res.redirect('/my-recipes');
         });
     });

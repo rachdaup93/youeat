@@ -67,3 +67,10 @@
   right: 0;
   height: 100px;
 }
+
+.success-message{
+  position: absolute;
+  top: 40px;
+  width: 35%;
+  left: 35%;
+}

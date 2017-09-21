@@ -147,3 +147,10 @@ h1{
   margin: 0 auto;
   text-align: center;
 }
+
+.success-message{
+  position: absolute;
+  top: 100px;
+  width: 35%;
+  left: 33%;
+}

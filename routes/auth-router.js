@@ -97,6 +97,7 @@ router.post('/process-signup', (req,res,next)=>{
         return;
       }
       // redirects the user to the home page if the save was successful
+      req.flash('successMessage', 'Sign up was successful');
       res.redirect('/');
     });
   })
@@ -112,7 +113,7 @@ router.get('/login',  (req,res,next)=>{
 
   // flash message if errors occur during passport process
   res.locals.errorMessage = req.flash('errorMessage');
-  res.locals.logoutFeedback = req.flash('logoutMessage');
+  res.locals.logoutFeedback = req.flash('logoutSuccess');
 
   // flash message if errors occur during passport process
   res.locals.flashError = req.flash('error');
@@ -182,9 +183,7 @@ router.post('/process-profile', myUploader.single('image'),(req, res, next) => {
                   next(err);
                   return;
               }
-
-              req.flash('updateSuccess', 'Profile update successful.');
-
+              req.flash('successMessage', 'Profile update successful.');
               res.redirect('/');
           });
       }
