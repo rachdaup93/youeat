@@ -12,9 +12,10 @@ const recipeSchema = new Schema({
   restrict: {type: String},
   mealType: {type: String},
   servings: {type: Number},
+  keywords: [{type: String}],
   ingredients: [{type: String}],
   procedure: [{type: String}],
-  // owner: {type: Schema.Types.ObjectId,required: true}
+//  owner: {type: Schema.Types.ObjectId,required: true}
 });
 
 const recipeModel = mongoose.model('recipes', recipeSchema);
@@ -25,6 +26,7 @@ recipeModel.create({
    restrict: "Vegetarian",
    mealType: "Dinner",
    servings: 4,
+   keywords: ['sample'],
    ingredients: [
      "2 cans spicy vegetarian refried beans",
      "3/4 cup vegetable stock",
@@ -65,6 +67,7 @@ recipeModel.create({
    imagePath: "dinner/chipotlesalad.png",
    restrict: "Free Eater",
    mealType: "Dinner",
+   keywords: ['sample'],
    servings: 4,
    ingredients: [
      "1 1/2 lbs skinless, boneless chicken thighs or breast",
@@ -106,6 +109,7 @@ recipeModel.create({
    imagePath: "dinner/codblackberry.png",
    restrict: "Pescetarian",
    mealType: "Dinner",
+   keywords: ['sample'],
    servings: 4,
    ingredients: [
     "1/3 cup vegetable oil",

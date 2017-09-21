@@ -2,19 +2,19 @@
   <h1>Organize Your Meals Weekly</h1>
   <p>YouEat allows users to create personalized meal plans by choosing from our large catalog of recipes.</p>
   <div id="sample-recipes">
-        <form  class="form-group" action="/sample-process" method="post">
+        <form  class="form-group" action="/sample" method="post">
           <label for="mealType">I am craving</label>
-          <select class="form-control" id="mealType">
-            <option>Breakfast</option>
-            <option>Lunch</option>
-            <option>Dinner</option>
-            <option>Dessert</option>
+          <select class="form-control" id="mealType" name="mealType">
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+            <option value="Dessert">Dessert</option>
           </select>
           <label for="mealType">I am a</label>
-          <select class="form-control" id="diet">
-            <option>Free Eater</option>
-            <option>Vegetarian</option>
-            <option>Pescetarian</option>
+          <select class="form-control" id="diet" name="restrict">
+            <option value="Free Eater">Free Eater</option>
+            <option value="Vegetarian">Vegetarian</option>
+            <option value="Pescetarian">Pescetarian</option>>
           </select>
           <button class="button-brown" type="submit" name="button">Check it Out</button>
         </form>

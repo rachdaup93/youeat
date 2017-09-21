@@ -12,21 +12,22 @@
   <body>
     <header>
       <nav>
-
+      <% if(currentUser){ %>
         <a id="menu"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
         <div id="menu-content">
-          <% if(currentUser){ %>
+
           <p><%= currentUser.username %></p>
+          <a href="/">Home</a>
           <a href="/recipes">Browse All Recipes</a>
-          <a href="/recipes/category/breakfast">Breakfast</a>
-          <a href="/recipes/category/lunch">Lunch</a>
-          <a href="/recipes/category/dinner">Dinner</a>
-          <a href="/recipes/category/dessert">Dessert</a>
-          <% } %>
-          <a href="/howitworks">How it works</a>
-          <a href="/aboutme">About Me</a>
+          <a href="/recipes/category/Breakfast">Breakfast</a>
+          <a href="/recipes/category/Lunch">Lunch</a>
+          <a href="/recipes/category/Dinner">Dinner</a>
+          <a href="/recipes/category/Dessert">Dessert</a>
+          <!-- <a href="/howitworks">How it works</a>
+          <a href="/aboutme">About Me</a> -->
 
         </div>
+      <% } %>
         <a id="home" href="/"><img src="/_images/logo.png" alt="" /></a>
 <%        if(!currentUser){ %>
           <a id="log" href="/login"><span class="glyphicon glyphicon-log-in"></span></a>
@@ -40,6 +41,7 @@
 <%-body-%>
   <footer>
     <p>Copyright &copy; September 2017</p>
+    <a href="http://slides.com/rachelledauphin/deck/fullscreen#/7">Thank You</a>
   </footer>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <% if(typeof script !== 'undefined'){ %>

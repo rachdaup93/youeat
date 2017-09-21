@@ -4,31 +4,31 @@
       <p class="error-message"> <%= errorMessage %> </p>
     <% } %>
     <h1> Sign Up </h1>
-
+    <p id="hint"><strong>* = Required</strong></p>
     <form id="form" method="post" action="/process-signup">
 
       <div>
-        <label for="firstName">First Name</label>
+        <label for="firstName">First Name*</label>
         <input id="firstName" type="text" name="firstName" value="">
       </div>
       <div>
-        <label for="lastName">Last Name</label>
+        <label for="lastName">Last Name*</label>
         <input id="lastName" type="text" name="lastName" value="">
       </div>
       <div>
-        <label for="email">Email</label>
+        <label for="email">Email*</label>
         <input id="email" type="email" name="email" value="">
       </div>
       <div>
-        <label for="username">Username</label>
+        <label for="username">Username*</label>
         <input id="username" type="text" name="username" value="">
       </div>
       <div>
-        <label for="password">Password</label>
+        <label for="password">Password*</label>
         <input id="password" type="password" name="password">
       </div>
       <div>
-        <label for="passwordMatch">Repeat Password</label>
+        <label for="passwordMatch">Repeat Password*</label>
         <input id="passwordMatch" type="password" name="passwordMatch">
       </div>
       <div>

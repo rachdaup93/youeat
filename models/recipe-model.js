@@ -10,8 +10,8 @@ const recipeSchema = new Schema({
   servings: {type: Number},
   keywords: [{type: String}],
   ingredients: [{type: String, required: true}],
-  procedure: [{type: String, required: true}]
-  // owner: {type: Schema.Types.ObjectId,required: true}
+  procedure: [{type: String, required: true}],
+  owner: {type: Schema.Types.ObjectId,required: true}
 });
 
 const recipeModel = mongoose.model('recipes', recipeSchema);

@@ -1,0 +1,58 @@
+<main class="main">
+  <div class="form-div">
+    <% if (  errorMessage.length > 0) { %>
+      <p class="error-message"> <%= errorMessage %> </p>
+    <% } %>
+    <h1> New Recipe </h1>
+    <p id="hint"><strong>* = Required</strong></p>
+    <form id="form" method="post" action="/process-recipe" enctype="multipart/form-data">
+
+      <div>
+        <label for="name">Recipe Name*</label>
+        <input id="name" type="text" name="name">
+      </div>
+      <div class="preview-box flex">
+          <img id="preview" src="" alt="" />
+        <label for="image">Upload A Picture*</label>
+        <input id="image" type="file" name="imagePath" >
+      </div>
+      <div>
+        <label for="restrict">Diet*</label>
+        <select class="form-control" id="restrict" name="restrict">
+          <option value="Free Eater">Free Eater</option>
+          <option value="Vegetarian">Vegetarian</option>
+          <option value="Pescetarian">Pescetarian</option>
+        </select>
+      </div>
+      <div>
+        <label for="mealType">Meal*</label>
+        <select class="form-control" id="mealType" name="mealType">
+          <option value="Breakfast">Breakfast</option>
+          <option value="Lunch">Lunch</option>
+          <option value="Dinner">Dinner</option>
+          <option value="Dessert">Dessert</option>
+        </select>
+      </div>
+      <div>
+      <label for="servings">Serving Size</label>
+        <input id="servings" type="number" name="servings">
+      </div>
+      <div>
+      <label for="keywords">Tags</label>
+        <input id="keywords" type="text" name="keywords">
+        <p>(seperate by commas)</p>
+      </div>
+      <div id="ingredients">
+      <label for="ingred">Ingredients*</label>
+        <input id="ingred" type="text" name="ingred[]">
+      </div>
+      <button id="add-ingred" class="more-button button-blue" type="button" name="button">Add More</button>
+      <div id="directions">
+      <label for="direct">Directions*</label>
+        <textarea id="direct" type="text" name="direct[]"></textarea>
+      </div>
+      <button id="add-direct" class="more-button button-blue" type="button" name="button">Add More</button>
+        <button class="button-brown"> Submit Recipe </button>
+    </form>
+  </div>
+</main>

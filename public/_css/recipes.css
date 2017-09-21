@@ -112,3 +112,38 @@ h1{
 #ingredients{
   height: 100%;
 }
+
+#my-list{
+  background-color: rgba(0,0,0,.8);
+  box-shadow: 0 10px 5px rgba(0,0,0, .9);
+  align-items: center;
+  color: rgb(255,255,255);
+}
+
+#my-list a,
+#my-list .recipe-info{
+  display: block;
+  width: 50%;
+  margin: 15px;
+}
+
+#my-list img{
+  width: 100%;
+}
+
+#my-list .button-red{
+  width: 100%;
+  background-color: rgb(238,71,60);
+}
+
+#my-list .button-red:hover{
+  width: 100%;
+  background-color: rgb(168,48,41);
+}
+
+.empty-list{
+  color: rgb(255,255,255);
+  width: 40%;
+  margin: 0 auto;
+  text-align: center;
+}

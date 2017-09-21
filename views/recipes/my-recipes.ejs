@@ -1,0 +1,22 @@
+<main class="main row">
+  <h1> My Recipes </h1>
+<%  if(myRecipes.length === 0){ %>
+    <div class="empty-list">
+      <h2>You don't have any recipes</h2>
+      <a href="/recipe-new" class="button-blue">Add a New Recipes</a>
+    </div>
+<%  }%>
+  <% myRecipes.forEach((recipe)=>{%>
+    <div id="my-list" class="flex col-md-4 col-sm-6 col-xs-12">
+      <a href="/recipes-details/<%=recipe._id%>"><img src="/_images/recipes_images<%=recipe.imagePath%>"></a>
+      <div class="recipe-info">
+        <h2><%= recipe.name %></h2>
+        <p>Diet: <%=recipe.mealType%></p>
+        <p>Servings: <%=recipe.servings%></p>
+        <form class="" action="/recipe-delete/<%=recipe._id%>" method="post">
+          <button type="sumbit" class="button-red"><span class="glyphicon glyphicon-remove"></span></button>
+        </form>
+      </div>
+    </div>
+  <% }) %>
+</main>

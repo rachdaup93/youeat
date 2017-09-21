@@ -12,9 +12,10 @@ const recipeSchema = new Schema({
   restrict: {type: String},
   mealType: {type: String},
   servings: {type: Number},
+  keywords: [{type: String}],
   ingredients: [{type: String}],
   procedure: [{type: String}],
-  // owner: {type: Schema.Types.ObjectId,required: true}
+//  owner: {type: Schema.Types.ObjectId,required: true}
 });
 
 const recipeModel = mongoose.model('recipes', recipeSchema);
@@ -25,6 +26,7 @@ recipeModel.create({
    restrict: "Vegetarian",
    mealType: "Dessert",
    servings: 8,
+   keywords: ['sample'],
    ingredients: [
      "1 cup graham cracker crumbs",
      "3 tbsp. butter, melted",

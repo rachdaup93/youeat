@@ -5,6 +5,10 @@
     margin: 0 auto;
     padding-top: 20px;
 }
+#hint{
+  text-align: center;
+  font-size: 16px;
+}
 #form .form-control,
 #form input{
   min-height: 50px;
@@ -56,7 +60,7 @@
 
 .error-message{
   width: 100%;
-  height: 50px;
+  min-height: 50px;
   font-size: 20px;
   background-color: rgb(220, 0,0);
   color: rgb(255,255,255);
@@ -79,9 +83,10 @@
   width: 200px;;
 }
 
-#form #preview-button{
-  width: 60%;
-  margin: 0 auto;
+#form .more-button{
+  display: block;
+  width: 35%;
+  margin: 15px auto;
 }
 
 textarea{
@@ -95,4 +100,26 @@ textarea{
 
 #form .preview-box input{
   color: rgb(255,255,255);
+}
+
+#form #ingredients label,
+#form #directions label,
+#form #ingredients input,
+#form #directions textarea{
+  display: block;
+  margin: 15px auto;
+}
+
+#form #ingredients label,
+#form #directions label{
+  text-align: center;
+}
+
+#form #directions textarea{
+  height: 100px;
+}
+
+#form #keywords + p{
+  margin-top: 5px;
+  text-align: center;
 }

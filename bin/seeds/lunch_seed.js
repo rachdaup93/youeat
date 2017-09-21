@@ -12,9 +12,10 @@ const recipeSchema = new Schema({
   restrict: {type: String},
   mealType: {type: String},
   servings: {type: Number},
+  keywords: [{type: String}],
   ingredients: [{type: String}],
   procedure: [{type: String}],
-  // owner: {type: Schema.Types.ObjectId,required: true}
+//  owner: {type: Schema.Types.ObjectId,required: true}
 });
 
 const recipeModel = mongoose.model('recipes', recipeSchema);
@@ -25,6 +26,7 @@ recipeModel.create({
    restrict: "Free Eater",
    mealType: "Lunch",
    servings: 4,
+   keywords: ['sample'],
    ingredients: [
      "1/4 cup canola oil",
      "3/4 lb. boneless, skinless chicken breasts",
@@ -60,6 +62,7 @@ recipeModel.create({
    restrict: "Vegetarian",
    mealType: "Lunch",
    servings: 6,
+   keywords: ['sample'],
    ingredients: [
     "salt and pepper to taste",
     "1 lb. whole-grain or farro penne rigate",
@@ -134,6 +137,7 @@ recipeModel.create({
    imagePath: "lunch/tilapiapoboy.png",
    restrict: "Pescetarian",
    mealType: "Lunch",
+   keywords: ['sample'],
    servings: 4,
    ingredients: [
     "2 large tilapia fillets (6-7 ounces each)",

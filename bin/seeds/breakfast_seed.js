@@ -12,9 +12,10 @@ const recipeSchema = new Schema({
   restrict: {type: String},
   mealType: {type: String},
   servings: {type: Number},
+  keywords: [{type: String}],
   ingredients: [{type: String}],
   procedure: [{type: String}],
-  // owner: {type: Schema.Types.ObjectId,required: true}
+//  owner: {type: Schema.Types.ObjectId,required: true}
 });
 
 const recipeModel = mongoose.model('recipes', recipeSchema);
@@ -25,6 +26,7 @@ recipeModel.create({
    restrict: "Vegetarian",
    mealType: "Breakfast",
    servings: 1,
+   keywords: ['sample'],
    ingredients: [
      "4 baguette slices (1/2 inch thick)",
      "1 tbsp. chocolate-hazelnut spread",
@@ -49,6 +51,7 @@ recipeModel.create({
    restrict: "Pescetarian",
    mealType: "Breakfast",
    servings: 6,
+   keywords: ['sample'],
    ingredients: [
       "8 oz. cream cheese, room temperature",
       "1/2 cup whole milk",
@@ -83,6 +86,7 @@ recipeModel.create({
    restrict: "Free Eater",
    mealType: "Breakfast",
    servings: 4,
+   keywords: ['sample'],
    ingredients: [
     "12 slices smoked bacon",
     "1 pkg. (8 oz.) cream cheese, softened",

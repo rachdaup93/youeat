@@ -29,9 +29,9 @@ router.get('/signup', (req, res, next)=>{
 router.post('/process-signup', (req,res,next)=>{
   // verifying required inputs of users
   if (req.body.firstName === '' ||
-      req.body.lastName === '' ||
-      req.body.email === '' ||
-      req.body.username === '' ||
+      req.body.lastName  === '' ||
+      req.body.email     === '' ||
+      req.body.username  === '' ||
       req.body.password  === '') {
         // if any required fields are left blank, a flash message will be
         // render after the user is redirected to the signup page
