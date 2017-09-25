@@ -18,9 +18,16 @@ router.use((req,res,next)=>{
 });
 
 router.post('/sample',(req,res,next)=>{
+  let query;
+  if(req.body.mealType === 'Dessert'){
+    query = {};
+  }
+  else{
+    query = {"restrict": req.body.restrict};
+  }
   RecipeModel.find({
     $and:[
-        {"restrict": req.body.restrict},
+        query,
         {"mealType": req.body.mealType},
         {"keywords": "sample"}
       ]
@@ -30,7 +37,9 @@ router.post('/sample',(req,res,next)=>{
         next(err);
         return;
       }
-      res.locals.recipe = recipeFromDb[0];
+      if(Array.isArray(recipeFromDb)){
+        res.locals.recipe = recipeFromDb[0];
+      }
       res.render('recipes/recipe-details');
     });
 });
