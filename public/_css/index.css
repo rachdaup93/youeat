@@ -68,6 +68,21 @@
   height: 100px;
 }
 
+#diet-info-icon{
+  position: relative;
+  top: -10px;
+  color: rgb(162,74,17);
+}
+
+#diet-info{
+  color: rgb(0,0,0);
+  text-align: center;
+  padding: 25px;
+}
+
+#diet-info h4{
+  margin-top: 20px;
+}
 .success-message{
   position: absolute;
   top: 40px;
@@ -207,6 +222,17 @@
 #carousel-example-generic{
   background-color: rgb(162,74,17);
 }
+#carousel-example-generic{
+ padding: 30px;
+}
+#carousel-example-generic .carousel-inner h3{
+ font-size: 28px;
+}
+
+#carousel-example-generic .carousel-inner p{
+  font-size: 18px;
+}
+
 #highlight-picture{
   background: url('/_images/highlight.jpg') no-repeat top left;
   background-size: cover;
