@@ -3,7 +3,7 @@
 }
 #jumbotron{
   background: url('/_images/jumbo-pic.jpg') no-repeat top left;
-  background-size: 100%;
+  background-size: cover;
   color: rgb(255,255,255);
   padding: 100px 50px;
   height: 100vh;
@@ -73,4 +73,141 @@
   top: 40px;
   width: 35%;
   left: 35%;
+}
+
+#category-divider{
+  justify-content: space-between;
+  height: 100px;
+  background-color: rgb(31,29,29);
+  padding: 20px;
+}
+#category-divider h3,
+#category-divider p{
+  align-items: center;
+}
+
+#category-divider h3{
+  width: 76%;
+  border-right: 2px solid rgb(255,255,255);
+  margin: 0;
+}
+
+#category-divider p{
+  padding-left: 15px;
+  font-weight: bold;
+}
+
+#category{
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#category > div{
+  height: 300px;
+  padding: 0;
+}
+
+#category h1{
+  font-size: 4em;
+  color: rgb(255,255,255);
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0, .4);
+  transition: background-color 0.5s;
+}
+
+#category h1:hover{
+  background-color: rgba(0,0,0, .8);
+}
+
+#veg-cat{
+  background: url('/_images/veggie.jpg') no-repeat top left;
+  background-size: cover;
+}
+
+#free-cat{
+  background: url('/_images/free-eater.jpg') no-repeat top left;
+  background-size: cover;
+}
+
+#pesc-cat{
+  background: url('/_images/pesc.jpg') no-repeat top left;
+  background-size: cover;
+}
+
+#about-section{
+  width: 100%;
+  margin: 0;
+}
+
+#about-me{
+  position: relative;
+  background: url('/_images/about-me-bg.svg') no-repeat top left;
+  background-size: cover;
+  /*color: rgb(0,0,0);*/
+  padding: 50px 100px;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  height: 600px;
+}
+#about-me h3{
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 5px;
+  border-bottom: 2px solid rgb(255,255,255);
+  padding: 10px;
+}
+
+#about-me p,
+#about-me h3,
+#about-me > div,
+#about-me > img{
+  z-index: 5;
+}
+#about-me p{
+  letter-spacing: 2px;
+}
+#about-me > div{
+  width: 35%;
+}
+
+#about-me a{
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(255,255,255);
+}
+
+#about-me a img{
+  width: 50px;
+}
+
+#about-me .overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(10,60,10, .8);
+  z-index: 0;
+}
+
+#side-section{
+  height: inherit;
+  padding: 0;
+}
+#side-section > div{
+  height: 50%;
+}
+
+#carousel-example-generic{
+  background-color: rgb(162,74,17);
+}
+#highlight-picture{
+  background: url('/_images/highlight.jpg') no-repeat top left;
+  background-size: cover;
 }
