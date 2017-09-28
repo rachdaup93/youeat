@@ -41,11 +41,11 @@
   <% if(!currentUser){ %>
     <h2>Cannot view for sample recipes</h2>
   <%}else{%>
-    <ul>
+    <ol>
       <%recipe.procedure.forEach((oneDirect)=>{%>
         <li><%-oneDirect-%></li>
       <%});%>
-    </ul>
+    </ol>
   </div>
   <%}%>
 </main>
