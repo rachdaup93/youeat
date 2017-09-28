@@ -40,8 +40,53 @@ router.post('/sample',(req,res,next)=>{
       if(Array.isArray(recipeFromDb)){
         res.locals.recipe = recipeFromDb[0];
       }
+      else{
+        res.locals.recipe = recipeFromDb;
+      }
       res.render('recipes/recipe-details');
     });
+});
+
+router.get('/sample-recipes/category/:recipe_meal',(req,res,next)=>{
+  let query;
+  if(req.params.recipe_meal === 'Vegetarian'){
+    query = {restrict: "Vegetarian"};
+  }
+  else if(req.params.recipe_meal === 'Pescetarian'){
+    query = {$or:[{restrict: "Vegetarian"},{restrict: "Pescetarian"}]};
+  }
+  else{
+    query = {};
+  }
+  RecipeModel.find({
+    $and:[
+        query,
+        {"keywords": "sample"}
+      ]
+    },
+    (err, recipesFromDb)=>{
+      if(err){
+        next(err);
+        return;
+      }
+      res.locals.recipesList = recipesFromDb;
+      res.render('recipes/recipes');
+    }
+  );
+});
+
+router.get('/sample-details/:recipe_id',(req,res,next)=>{
+  RecipeModel.findById(
+    req.params.recipe_id,
+    (err,recipeFromDb)=>{
+      if(err){
+        next(err);
+        return;
+      }
+      res.locals.recipe = recipeFromDb;
+      res.render('recipes/recipe-details');
+    }
+  );
 });
 
 router.get('/recipes',(req,res,next)=>{

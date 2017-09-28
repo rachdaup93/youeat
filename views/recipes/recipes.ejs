@@ -1,5 +1,9 @@
 <main class="main row">
-  <h1>Recipes - <%=currentUser.diet%></h1>
+  <%if(currentUser){%>
+      <h1>Recipes - <%=currentUser.diet%></h1>
+  <%}else{%>
+      <h1>Recipes - Samples</h1>
+    <%}%>
   <div id="recipes-list">
     <div class="row flex">
     <%  for(let i = 0; i < recipesList.length; i++){ %>
@@ -9,7 +13,11 @@
         <% }%>
         <div class="recipe col-md-3">
           <img src="/_images/recipes_images/<%= recipesList[i].imagePath%>" alt="">
-          <a class="overlay flex" href="/recipes-details/<%=recipesList[i]._id%>"><%=recipesList[i].name%></a>
+          <%if(currentUser){%>
+            <a class="overlay flex" href="/recipes-details/<%=recipesList[i]._id%>"><%=recipesList[i].name%></a>
+          <%}else{%>
+            <a class="overlay flex" href="/sample-details/<%=recipesList[i]._id%>"><%=recipesList[i].name%></a>
+          <%}%>
         </div>
       <%}%>
     </div>
